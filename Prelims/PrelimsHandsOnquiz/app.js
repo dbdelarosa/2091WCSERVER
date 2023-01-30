@@ -1,4 +1,3 @@
-
 var addNumbers = require('./calculations');
 
-add(300 , 6, 4);
+add(300, 6, 4);
