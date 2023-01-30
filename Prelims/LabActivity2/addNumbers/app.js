@@ -1,4 +1,4 @@
 
 var addNumbers = require('./add');
 
-add(10 , 20);
+add(300 , 6, 4);
