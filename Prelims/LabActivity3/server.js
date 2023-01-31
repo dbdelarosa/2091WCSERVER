@@ -22,7 +22,7 @@ res.write(
 } else if (req.url == '/about') {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write(
-  '<html><h1>This is Admin Page.</h1><body><p>This Activity will teach on how to deal with simple server and local modules in Node.js</p></body></html>'
+  '<html><h1>This is About Page.</h1><body><p>This Activity will teach on how to deal with simple server and local modules in Node.js</p></body></html>'
   );
 
 } else if (req.url == '/contact') {
