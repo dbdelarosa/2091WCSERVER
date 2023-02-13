@@ -1,12 +1,12 @@
 function greet(name) {
-  return 'Hello' + name;
+  return 'Hello ' + name;
 }
 
 function congrats(name) {
-  return 'Congratulations' + name;
+  return 'Congratulations b' + name;
 }
 
 function gbye(name) {
-  return 'GoodBye' + name;
+  return 'GoodBye ' + name;
 }
 module.exports = { greet, congrats, gbye };
