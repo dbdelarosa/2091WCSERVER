@@ -3,7 +3,7 @@ function greet(name) {
 }
 
 function congrats(name) {
-  return 'Congratulations b' + name;
+  return 'Congratulations ' + name;
 }
 
 function gbye(name) {
