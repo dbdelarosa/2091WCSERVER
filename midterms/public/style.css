@@ -6,7 +6,7 @@ body {
   box-align: center;
 }
 .header {
-  background-color: black;
+  background-color: royalblue;
   padding: 15px;
   text-align: center;
 }
@@ -23,7 +23,7 @@ body {
   text-decoration: none;
 }
 .nav_menu a:hover {
-  color: black;
+  color: maroon;
 }
 .footer {
   padding: 15px;
@@ -45,7 +45,6 @@ body {
 }
 
 .background {
-  background-image: url(background.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
