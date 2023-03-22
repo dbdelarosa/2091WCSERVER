@@ -28,13 +28,14 @@ app.get('/dishes', (req, res) => {
 //getdishes by type
 
 app.get('/dishes/:type', (req, res) => {
-  const dish = dishes.find((d) => d.type === parseInt(req.params.type));
-  if (!dishes) {
-    return res.status(404).json({ error: 'record not found' });
+  const dish = dishes.find((d) => d.type === req.params.type);
+  if (!dish) {
+    res.status(404).json({ error: 'record not found' });
   } else {
     res.json(dish);
   }
 });
+
 app.use((req, res) => {
   res.status(404).json({ error: 'Record not found' });
 });
