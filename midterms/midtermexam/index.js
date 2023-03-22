@@ -1,51 +1,44 @@
 //Array for Get Method
-const express = require ('express');
+const express = require('express');
 const app = express();
 
-
-
-const dishes= [{
+const dishes = [
+  {
     type: 'Sisig',
-    province: 'Pampanga' ,
-    price: 220
-},
-{
-  type: 'Salpicao',
-  province: 'Quezon',
-  price: 180
-},
+    province: 'Pampanga',
+    price: 220,
+  },
+  {
+    type: 'Salpicao',
+    province: 'Quezon',
+    price: 180,
+  },
 
-{
-  type: 'Bagnet',
-  province: 'Ilocos' ,
-  price: 370
-},
+  {
+    type: 'Bagnet',
+    province: 'Ilocos',
+    price: 370,
+  },
 ];
 
-
 //get all dishes
-app.get('/api/dishes', (req, res) =>{
-    res.send(dishes);
-
+app.get('/dishes', (req, res) => {
+  res.json(dishes);
 });
 //getdishes by type
 
-
-app.get('/api/dishes/:type', (req, res) =>{
-  res.send(dishes);
-
-
+app.get('/dishes/:type', (req, res) => {
+  const dish = dishes.find((d) => d.type === parseInt(req.params.type));
+  if (!dishes) {
+    return res.status(404).json({ error: 'record not found' });
+  } else {
+    res.json(dish);
+  }
+});
+app.use((req, res) => {
+  res.status(404).json({ error: 'Record not found' });
 });
 
-app.get('/api/dishes/:type', (req, res) =>{
-   
-    const dish = dishes.find(h => h.id === parseInt(req.params.id));
-    if(!dishes) return res.status(404).send('The food that you are looking for is not valid');
-    res.send(dishes);
-    
-    
+app.listen(3000, () => {
+  console.log('Listening on Port 3000');
 });
-
-
-
-app.listen(3000, () => console.log('Listening on Port 3000'));
